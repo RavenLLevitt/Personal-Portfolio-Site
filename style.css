@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
+
+/* General CSS */
+body {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Queue Button CSS */
+#queueButton {
+  position: relative;
+  border: 2px solid #e2e4e9;
+  border-radius: 50vh 50vh 50vh 50vh;
+  width: 60vh;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-radius 1s ease, transform 1s ease, border 0.5s ease;
+}
+
+#queueButton:hover {
+  border: 2px solid transparent;
+}
+
+#queueText {
+  /* alignment settings */
+  position: relative;
+  z-index: 3;
+  translate: 0% -5%;
+
+  /* typography Settings */
+
+  color: #e2e4e9;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 6vw;
+  font-weight: 100;
+  line-height: normal;
+  transition: color 0.5s ease;
+}
+
+#queueButton:hover #queueText {
+  color: black;
+  font-weight: 200;
+}
+/* hover effect */
+#hoverBox {
+  display: block;
+  position: absolute;
+
+  height: 500px;
+  width: 500px;
+  background: linear-gradient(137deg, #8d02c0 26.28%, #005af5 83.61%);
+  filter: blur(75px);
+  z-index: 2;
+  transform: translate(-70%, -65%);
+}
+
+/* Header CSS */
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  z-index: 100;
+}
+
+.header-section {
+  display: flex;
+}
+
+.header-left {
+  justify-content: flex-start;
+  align-content: flex-end;
+}
+
+.header-right {
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+#homeButton {
+  background-image: url("./resources/photos/logo.png");
+}
+
+.headerText {
+  font-family: "Inter", sans-serif;
+  font-size: 2vw;
+  font-weight: 100;
+  line-height: normal;
+  color: #e2e4e9;
+}
+
+#loginButton {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-size: 2vw;
+  font-weight: 100;
+}
+
+.text {
+  position: absolute;
+  line-height: normal;
+  transition: opacity 0.5s ease;
+}
+
+.solid {
+  color: #e2e4e9;
+  z-index: 1;
+}
+
+.gradient {
+  background: linear-gradient(98deg, #8d02c0 -2.7%, #005af5 106.76%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  z-index: 2;
+}
+
+#loginButton:hover .gradient {
+  opacity: 1;
+}
+
+#loginButton {
+  border-radius: 20px;
+  width: 12vw;
+  height: 6vh;
+  border: 2px solid #e2e4e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease, border-radius 1s ease;
+  color: transparent;
+  margin-right: 20px;
+}
+
+#loginButton:hover {
+  border-radius: 10px;
+  background-color: #e2e4e9;
+}
+
+#signUpButton {
+  border-radius: 20px;
+  width: 12vw;
+  height: 6vh;
+  border: 2px solid #e2e4e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s ease, border-radius 1s ease,
+    border 0.5s ease;
+  color: transparent;
+  margin-right: 20px;
+}
+
+#signUpButton:hover {
+  border-radius: 10px;
+
+  background: linear-gradient(98deg, #8d02c0 -2.7%, #005af5 106.76%);
+
+  border: 2px solid #000000;
+}
+
+#signUpText {
+  font-family: "Inter", sans-serif;
+  font-size: 2vw;
+  font-weight: 100;
+  line-height: normal;
+  background-clip: text;
+  color: #e2e4e9;
+  transition: color 0.5s ease;
+}
+
+#signUpButton:hover #signUpText {
+  color: #000000;
+}
+
+/* Join Box */
+/* i don't like hard coding the translation but vh isn't working and they aren't stacking properly rn so it will have to do for now */
+/* also resize so it'sthe same size as the buble abbove that would be cool or bigger atleast */
+.container {
+  position: relative;
+  translate: 0px 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* THESE NEED TO BE SAME SIZE IDK WHY THEY ARE */
+/* fonts should also be the same and one shouldn't be greyed out like it is */
+#pinInput {
+  width: 20vw;
+  height: 3vh;
+  padding: 20px 10px 10px 20px;
+
+  font-size: 20px;
+  border: 2px solid #e2e4e9;
+  border-radius: 10px;
+  background-color: black;
+  color: #e2e4e9;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  align-content: center;
+  resize: none;
+  margin-right: 20px;
+  font-weight: 100;
+}
+
+#submitBtn {
+  padding: 10px 20px;
+  width: 5vw;
+  height: 6vh;
+  background-color: transparent;
+  color: #e2e4e9;
+  border: 2px solid #e2e4e9;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
+  text-align: center;
+  justify-content: center;
+  transition: background-color 0.5s ease, border-radius 1s ease,
+    border 0.5s ease;
+}
+
+#submitBtn:hover {
+  border-radius: 10px;
+
+  background: linear-gradient(98deg, #8d02c0 -2.7%, #005af5 106.76%);
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.col {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
