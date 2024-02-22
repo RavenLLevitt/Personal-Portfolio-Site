@@ -27,7 +27,23 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: border-radius 1s ease, transform 1s ease, border 0.5s ease,
+    width 0.5s ease, height 0.5s ease;
+  z-index: 15;
+}
+
+#cursorFollower {
+  position: absolute;
+  border: 2px solid #e2e4e9;
+  /* background-color: black; */
+  border-radius: 50vh 50vh 50vh 50vh;
+  width: 40vh;
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
   transition: border-radius 1s ease, transform 1s ease, border 0.5s ease;
+  z-index: 15;
+  pointer-events: none;
 }
 
 #queueButton:hover {

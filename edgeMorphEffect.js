@@ -17,6 +17,6 @@ function hoverCheck() {
   }
   queueButton.style.borderRadius = `${borderRadius[0]}% ${borderRadius[1]}% ${borderRadius[2]}% ${borderRadius[3]}%`;
 }
-
+// add updating for the cursor follower?
 setInterval(updateButton, 1500);
 setInterval(hoverCheck, 10);
