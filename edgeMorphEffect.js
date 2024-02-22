@@ -11,7 +11,6 @@ function updateButton() {
   queueButton.style.borderRadius = `${borderRadius[0]}% ${borderRadius[1]}% ${borderRadius[2]}% ${borderRadius[3]}%`;
 }
 
-// need this since i want to update right away if it hovers
 function hoverCheck() {
   if (queueButton.matches(":hover")) {
     borderRadius = [50, 50, 50, 50];

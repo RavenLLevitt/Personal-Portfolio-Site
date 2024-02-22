@@ -5,47 +5,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="header">
-      <div class="header-section header-left">
-        <a href="./index.html">
-          <!-- please replace this with not just a screenshot of the logo and rebuild it to be reactive -->
-          <img src="./resources/photos/logo.png" alt="logo" id="logo" />
-          <!-- make text gradient on hover-->
-          <p class="headerText">Quick Queue</p>
-        </a>
-      </div>
-      <!-- need to link these buttons to pages eventually -->
-      <!-- i forgot how much it sucks to work with gradients in native html  -->
-      <div class="header-section header-right">
-        <a href="Login-SignUp/Login/login.php">
-          <div id="loginButton">
-            <span class="text solid">Login</span>
-            <span class="text gradient">Login</span>
-          </div>
-        </a>
-        <a href="Login-SignUp/Sign-Up/signup.php">
-          <div id="signUpButton"><p id="signUpText">Sign-up</p></div>
-        </a>
-      </div>
-    </div>
-    <!-- make the text in here not highlightable -->
-    <!-- and also maybe amke it swap to like "join" when you hover -->
-    <!-- this should generate a new queue with you as the leader -->
     <div class="col">
       <a href="createqueue/createqueue.php">
         <div id="queueButton">
-          <h2 id="queueText">Queue</h2>
+          <h2 id="mainButtonText">Queue</h2>
           <div id="hoverBox"></div>
         </div>
       </a>
-      <div class="container">
-        <textarea id="pinInput" placeholder="Enter your Room Code"></textarea>
-        <a href="joinqueue/joinqueue.php">
-          <div id="submitBtn">Submit</div>
-        </a>
-      </div>
     </div>
     <script src="edgeMorphEffect.js"></script>
+
+    <script src="textMorphEffect.js"></script>
     <script src="hoverEffect.js"></script>
   </body>
 </html>
