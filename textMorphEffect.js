@@ -1,4 +1,5 @@
 // Text animation
+// need to make it so stops when hovered, or maybe pulls up somthing like "explore"
 const texts = ["Design", "Build", "Iterate"];
 let index = 0;
 

@@ -1,20 +1,20 @@
+<!-- need tomake it so that when you zoom out things rescale -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Quick Queue</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="col">
-      <a href="createqueue/createqueue.php">
-        <div id="queueButton">
-          <h2 id="mainButtonText">Queue</h2>
-          <div id="hoverBox"></div>
-        </div>
-      </a>
+      <div id="queueButton">
+        <h2 id="mainButtonText">Queue</h2>
+        <div id="hoverBox"></div>
+      </div>
     </div>
+    <div id="hiddenGradient" style="display: none"></div>
     <script src="edgeMorphEffect.js"></script>
-
     <script src="textMorphEffect.js"></script>
     <script src="hoverEffect.js"></script>
   </body>

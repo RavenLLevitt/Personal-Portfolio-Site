@@ -68,6 +68,19 @@ a {
   transform: translate(-70%, -65%);
 }
 
+#hiddenGradient {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  display: block;
+  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+  border-radius: 50%;
+  z-index: 9999;
+  background: linear-gradient(137deg, #8d02c0 26.28%, #005af5 83.61%);
+  filter: blur(75px);
+}
 /* Header CSS */
 
 #header {
