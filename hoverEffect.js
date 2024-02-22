@@ -31,25 +31,28 @@ document.addEventListener("mousemove", function (e) {
 // initial transition
 // ignore that i swapped to jqeury here
 $(document).ready(function () {
-  $("#queueButton").click(function () {
+  $("#queueButton").click(function (event) {
     // Calculate the size to cover the screen
     var maxDimension = Math.max($(window).width(), $(window).height()) * 2;
-    $("#hiddenGradient")
+    // Capture mouse click position
+    var mouseX = event.pageX;
+    var mouseY = event.pageY;
+
+    $("#hiddenGradient") // Make sure to use the correct ID here
       .css({
         display: "block",
-        top: "50%",
-        left: "50%",
+        top: mouseY, // Use mouseY for the top position
+        left: mouseX, // Use mouseX for the left position
         width: "0",
         height: "0",
-        transform: "translate(-50%, -50%)",
+        // Remove transform to start expansion from the mouse click position
       })
       .animate(
         {
           width: maxDimension,
           height: maxDimension,
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          top: mouseY - maxDimension / 2, // Center the expansion on the click
+          left: mouseX - maxDimension / 2, // Center the expansion on the click
         },
         500
       ); // Adjust time as needed
