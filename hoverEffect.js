@@ -24,6 +24,7 @@ $(document).mousemove(function (e) {
     $("#queueButton").css({
       left: e.pageX - halfFollowerSize + "px",
       top: e.pageY - halfFollowerSize + "px",
+      
     });
   }
 });

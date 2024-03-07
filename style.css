@@ -75,13 +75,14 @@ a {
 #hoverBox {
   display: block;
   position: absolute;
-
-  height: 500px;
-  width: 500px;
+/* swap off linear scale */
+  height: 10vh;
+  width: 10vh;
   background: linear-gradient(137deg, #8d02c0 26.28%, #005af5 83.61%);
   filter: blur(75px);
   z-index: 2;
-  transform: translate(-70%, -65%);
+  transform: translate(-50%, -50%);
+  transition: height 1s ease, width 1s ease;
 }
 
 #hiddenGradient {
