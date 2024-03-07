@@ -26,7 +26,9 @@ function changeText() {
   }
 
   // Start updating text
-  updateText(0);
+  if (!document.getElementById("queueButton").matches(":hover")) {
+    updateText(0);
+  }
 }
 
 // Initial call and set interval for changing text
