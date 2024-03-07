@@ -75,9 +75,9 @@ a {
 #hoverBox {
   display: block;
   position: absolute;
-/* swap off linear scale */
-  height: 10vh;
-  width: 10vh;
+  /* swap off linear scale */
+  height: 30vh;
+  width: 30vh;
   background: linear-gradient(137deg, #8d02c0 26.28%, #005af5 83.61%);
   filter: blur(75px);
   z-index: 2;
