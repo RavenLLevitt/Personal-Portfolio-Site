@@ -68,7 +68,10 @@ $(document).ready(function () {
             width: "20vh",
             height: "20vh",
             border: "2px solid #e2e4e9",
+            // solid or not?
             background: "#e2e4e9",
+            // i get the sense that this box-shadow isn't doing anything... not really sure why atm but should look ot fix this or remove.
+            "box-shadow": "0px, 2px, 10px, rgba(5, 0, 56, 0.08)",
             // opacity: "0.2",
             // didn't do anything i don't think:
             position: "absolute",
