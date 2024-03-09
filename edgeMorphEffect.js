@@ -25,22 +25,24 @@ function hoverCheck() {
       // need to remove transitions somehwo since it will now be live calculated or atleast make it very fast
       // this breaks it for some reason, also need to make it smaller
       queueButton.style.transition =
-        "border-radius 0.3s ease, transform 1s ease, border 0.5s ease, width 0.5s ease, height 0.5s ease";
-      if (mouseXPercentage < 50 && mouseYPercentage < 50) {
+        "border-radius 0.5s ease, transform 1s ease, border 0.5s ease, width 0.5s ease, height 0.5s ease";
+
+      borderRadius = [50, 50, 50, 50];
+      if (mouseXPercentage < 40 && mouseYPercentage < 40) {
         // top left
-        borderRadius = [10, 50, 50, 50];
-      } else if (mouseXPercentage > 50 && mouseYPercentage < 50) {
+        borderRadius[0] = 10;
+      } else if (mouseXPercentage > 60 && mouseYPercentage < 40) {
         // top right
-        borderRadius = [50, 10, 50, 50];
-      } else if (mouseXPercentage < 50 && mouseYPercentage > 50) {
+        borderRadius[1] = 10;
+      } else if (mouseXPercentage < 60 && mouseYPercentage > 60) {
         // bottom left
-        borderRadius = [50, 50, 50, 10];
-      } else if (mouseXPercentage > 50 && mouseYPercentage > 50) {
+        borderRadius[3] = 10;
+      } else if (mouseXPercentage > 60 && mouseYPercentage > 60) {
         // bottom right
-        borderRadius = [50, 50, 10, 50];
+        borderRadius[2] = 10;
       }
     }
-  } else {
+  } else if (!flip) {
     document.getElementById("hoverBox").style.height = "30vh";
     document.getElementById("hoverBox").style.width = "30vh";
   }

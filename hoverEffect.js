@@ -1,30 +1,31 @@
 var flip = false;
 // should probably convert this to jquery to not have terrible
 document.addEventListener("mousemove", function (e) {
-  const hoverBox = document.getElementById("hoverBox");
+  if (!flip) {
+    const hoverBox = document.getElementById("hoverBox");
 
-  // Get bounding rectangle of queueButton
-  const rect = hoverBox.parentElement.getBoundingClientRect();
+    // Get bounding rectangle of queueButton
+    const rect = hoverBox.parentElement.getBoundingClientRect();
 
-  // Calculate mouse position relative to queueButton
-  const mouseX = e.clientX - rect.left;
-  const mouseY = e.clientY - rect.top;
+    // Calculate mouse position relative to queueButton
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
 
-  // Set the hoverBox style to move with the mouse
-  hoverBox.style.left = mouseX + "px";
-  hoverBox.style.top = mouseY + "px";
+    // Set the hoverBox style to move with the mouse
+    hoverBox.style.left = mouseX + "px";
+    hoverBox.style.top = mouseY + "px";
+  }
 });
 
 $(document).mousemove(function (e) {
   if (flip) {
     var viewportHeight = $(window).height(); // Get the viewport height in pixels
-    var followerSizeInPixels = (40 / 100) * viewportHeight; // Convert 30vh to pixels
+    var followerSizeInPixels = (20 / 100) * viewportHeight; // Convert 30vh to pixels
     var halfFollowerSize = followerSizeInPixels / 2; // Calculate half the size to center
 
     $("#queueButton").css({
       left: e.pageX - halfFollowerSize + "px",
       top: e.pageY - halfFollowerSize + "px",
-      
     });
   }
 });
@@ -64,10 +65,11 @@ $(document).ready(function () {
           //   $("#queueButton").replaceWith('<div id="cursorFollower"></div>');
           // Style #cursorFollower as needed, or it should be styled via CSS
           $("#queueButton").css({
-            width: "40vh",
-            height: "40vh",
+            width: "20vh",
+            height: "20vh",
             border: "2px solid #e2e4e9",
-
+            background: "#e2e4e9",
+            // opacity: "0.2",
             // didn't do anything i don't think:
             position: "absolute",
             display: "block",
