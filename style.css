@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 /* General CSS */
 body {
@@ -80,7 +80,7 @@ a {
   width: 30vh;
   background: linear-gradient(137deg, #8d02c0 26.28%, #005af5 83.61%);
   filter: blur(75px);
-  z-index: 2;
+  z-index: 3;
   transform: translate(-50%, -50%);
   transition: height 1s ease, width 1s ease;
 }
@@ -113,6 +113,83 @@ a {
   background: transparent;
   z-index: 100;
 }
+
+.pane-flex-grid {
+  display: flex;
+}
+
+.col-left {
+  flex: 1;
+  width: 45%;
+  justify-content: left;
+}
+
+
+.col-right {
+  flex: 1;
+  width: 45%;
+  justify-content: right;
+}
+
+#slide-show-pane {
+  width: 80vw;
+  height: 56vh;
+  z-index: 11; 
+  background-color: #000000;
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  /* prob change z-index */
+}
+
+#selected-pane-title {
+
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  color: #e2e4e9;
+  text-align: left;
+  font-size: 3vh;
+  margin-left: 2vw;
+  margin-top: 2vw;
+}
+
+#selected-pane-paragraph {
+
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  color: #e2e4e9;
+  opacity: 90%;
+  text-align: left;
+  font-size: 2vh;
+  margin-left: 2vw;
+  /* margin-top: 1vw; */
+
+  max-width: 30vw;
+  line-height: 2.5vh;
+}
+/* might need to change this width an dheight to be 1920x1080 */
+/* going to need to probably mess with this a bit once it is completed, and be sure i capture correct res images, maybe multiple of each */
+#selected-project-image {
+  width: 40vw;
+  height: 35vh;
+  /* background-color: blue; */
+  background-image: url(./resources/testImage.jpg);
+  background-size: 100% 100%;
+  position: center;
+  border-radius: 15px;
+  margin-top: 2vw;
+  margin-left: -2vw;
+  /* replace with image src */
+}
+
+
+
+
+/* Thivngs below probably need to be removed */
 
 .header-section {
   display: flex;

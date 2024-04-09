@@ -8,11 +8,17 @@ function getRandomRadius() {
 }
 
 function updateButton() {
+  
+ if(selecting){return;}
+ 
   borderRadius = borderRadius.map(getRandomRadius);
   queueButton.style.borderRadius = `${borderRadius[0]}% ${borderRadius[1]}% ${borderRadius[2]}% ${borderRadius[3]}%`;
+  
 }
 
 function hoverCheck() {
+ if(selecting){return;}
+
   if (queueButton.matches(":hover")) {
     if (!flip) {
       borderRadius = [50, 50, 50, 50];
@@ -47,6 +53,9 @@ function hoverCheck() {
     document.getElementById("hoverBox").style.width = "30vh";
   }
   queueButton.style.borderRadius = `${borderRadius[0]}% ${borderRadius[1]}% ${borderRadius[2]}% ${borderRadius[3]}%`;
+  } else{
+
+  }
 }
 
 function updateMousePosition(event) {
