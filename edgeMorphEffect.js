@@ -1,3 +1,4 @@
+// add more math here so the shapes are more consitatnly clean
 const queueButton = document.getElementById("queueButton");
 let borderRadius = [50, 50, 50, 50];
 let mouseXPercentage = 0;
@@ -19,6 +20,7 @@ function updateButton() {
 function hoverCheck() {
  if(selecting){return;}
 
+//  i need to figure out what the new behaviour for this should be, right now it's broken because we remove it's pointer interactions so you can click and hover other things
   if (queueButton.matches(":hover")) {
     if (!flip) {
       borderRadius = [50, 50, 50, 50];
@@ -53,9 +55,7 @@ function hoverCheck() {
     document.getElementById("hoverBox").style.width = "30vh";
   }
   queueButton.style.borderRadius = `${borderRadius[0]}% ${borderRadius[1]}% ${borderRadius[2]}% ${borderRadius[3]}%`;
-  } else{
 
-  }
 }
 
 function updateMousePosition(event) {

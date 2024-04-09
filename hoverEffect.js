@@ -65,41 +65,92 @@ $(document).ready(function () {
       'transition': 'top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease', // or 'fixed' depending on the context
   });
 
+  // not certain if these calculcations are correct, they seem close but a little off possibly, review later
     $('#queueButton').css({
-      'position': 'absolute', // or 'fixed' depending on the context
-      'top': panePos.top,
-      'left': panePos.left,
-      'width' : '88vw',
-      'height' : '61vh',
-      'border-radus' : '15px'
+      'position': 'absolute',
+      'top': panePos.top-(((paneHeight*1.04)-paneHeight)/2),
+      'left': panePos.left-(((paneWidth*1.02)-paneWidth)/2),
+      'width' : paneWidth*1.02,
+      'height' : paneHeight*1.04,
+      'border-radius' : '15px'
   });
 
     flip = false;
     selecting = true;
   }).on('mouseleave', '#slide-show-pane', function() {
+    
 
-    flip = true;
-    selecting = false;
     $('#queueButton').css({
-      'transition': '',
+      'transition': 'top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease', // or 'fixed' depending on the context
       width: "20vh",
       height: "20vh"
-  });
+    });
+    flip = true;
+    selecting = false;
 
-    $(this).css('background-color', 'black');
+  // need to finetune this timeout
+    setTimeout(() => {
+          $('#queueButton').css({
+      'transition': '',
+  });
+  }, 700);
   });
   
 
   $('body').on('mouseenter', '#selected-project-image', function() {
-    flip = true;
-    
-    $('#slide-show-pane').css('background-color', 'black');
-  }).on('mouseleave', '#selected-project-image', function() {
+    var panePos = $('#selected-project-image').offset();
+    var paneWidth = $('#selected-project-image').width();
+    var paneHeight = $('#selected-project-image').height();
+
+    $('#queueButton').css({
+      'transition': 'top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease', // or 'fixed' depending on the context
+  });
+
+  // not certain if these calculcations are correct, they seem close but a little off possibly, review later
+    $('#queueButton').css({
+      'position': 'absolute',
+      'top': panePos.top-(((paneHeight*1.07)-paneHeight)/2),
+      'left': panePos.left-(((paneWidth*1.035)-paneWidth)/2),
+      'width' : paneWidth*1.035,
+      'height' : paneHeight*1.07,
+      'border-radius' : '15px'
+  });
+
+  $('#selected-project-image').css({
+    'filter' : 'blur(10px)'
+  })
+
+  $('#selected-project-image').append
     flip = false;
-    $("#queueButton").css({
-      left: 0 + "px",
-      top: 0 + "px"
-    });
+    selecting = true;
+  }).on('mouseleave', '#selected-project-image', function() {
+    
+    var panePos = $('#slide-show-pane').offset();
+    var paneWidth = $('#slide-show-pane').width();
+    var paneHeight = $('#slide-show-pane').height();
+
+    $('#queueButton').css({
+      'transition': 'top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease', // or 'fixed' depending on the context
+  });
+
+  // not certain if these calculcations are correct, they seem close but a little off possibly, review later
+  $('#queueButton').css({
+    'position': 'absolute',
+    'top': panePos.top-(((paneHeight*1.04)-paneHeight)/2),
+    'left': panePos.left-(((paneWidth*1.02)-paneWidth)/2),
+    'width' : paneWidth*1.02,
+    'height' : paneHeight*1.04,
+    'border-radius' : '15px'
+});
+
+$('#selected-project-image').css({
+  'filter' : 'blur(0)'
+})
+
+    flip = false;
+    selecting = true;
+  
+
   });
 
   $("#queueButton").click(function (event) {

@@ -53,7 +53,7 @@ a {
 #mainButtonText {
   /* alignment settings */
   position: relative;
-  z-index: 3;
+  z-index: 11;
   translate: 0% -5%;
 
   /* typography Settings */
@@ -171,6 +171,21 @@ a {
   max-width: 30vw;
   line-height: 2.5vh;
 }
+
+
+#hovered-visit-text {
+
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  color: #e2e4e9;
+  text-align: bottom;
+  font-size: 3vh;
+  margin-left: 2vw;
+  margin-top: 2vw;
+}
+
 /* might need to change this width an dheight to be 1920x1080 */
 /* going to need to probably mess with this a bit once it is completed, and be sure i capture correct res images, maybe multiple of each */
 #selected-project-image {
@@ -180,9 +195,11 @@ a {
   background-image: url(./resources/testImage.jpg);
   background-size: 100% 100%;
   position: center;
+  justify-content: center;
   border-radius: 15px;
   margin-top: 2vw;
   margin-left: -2vw;
+  transition: filter 0.5s ease;
   /* replace with image src */
 }
 
