@@ -116,15 +116,32 @@ $(document).ready(function () {
       'border-radius' : '15px'
   });
 
+  $('#slide-show-pane').append(`<h2 id="hovered-visit-text"> Take a Look -> </h2>`);
+
+  var viewportHeight = $(window).height(); // Get viewport height in pixels
+  var viewportWidth = $(window).width(); // Get viewport width in pixels
+  
+  // probably should unharcode these values, i feel like there has to be a better way to do this, will work for now.
+  var additionalTopPx = (27 / 100) * viewportHeight; // Convert 17.5vh to pixels
+  var additionalLeftPx = (13.5 / 100) * viewportWidth; // Convert 20vw to pixels
+  
+  $('#hovered-visit-text').css({
+    'top': panePos.top + additionalTopPx + 'px', // Add pixels to top position
+    'left': panePos.left + additionalLeftPx + 'px', // Add pixels to left position
+    'opacity': 1,
+  });
+  
   $('#selected-project-image').css({
     'filter' : 'blur(10px)'
-  })
+  });
 
-  $('#selected-project-image').append
     flip = false;
     selecting = true;
   }).on('mouseleave', '#selected-project-image', function() {
     
+    $('#hovered-visit-text').remove();
+ 
+
     var panePos = $('#slide-show-pane').offset();
     var paneWidth = $('#slide-show-pane').width();
     var paneHeight = $('#slide-show-pane').height();
@@ -198,7 +215,9 @@ $('#selected-project-image').css({
             display: "block",
             "pointer-events": "none",
           });
-
+// do i want to swap the ancho tag for window.open() so it leaves my site open?
+// all of these need to be swapped for variables so it can swap
+// still need to add icons, project breakdowns, and navigator
           $('body').append(`
           <div id="slide-show-pane" style="opacity: 0;">
               <div class="pane-flex-grid">
@@ -207,7 +226,9 @@ $('#selected-project-image').css({
                       <p id="selected-pane-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                   </div>
                   <div class="col-right">
-                      <div id="selected-project-image"></div>
+                  <a href="https://www.w3schools.com">
+                  <div id="selected-project-image"></div>
+                  </a>
                   </div>
               </div>
           </div>

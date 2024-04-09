@@ -13,7 +13,7 @@ body {
 a {
   text-decoration: none;
   display: flex;
-  align-items: center;
+  position: absolute;
 }
 
 /* Queue Button CSS */
@@ -174,16 +174,18 @@ a {
 
 
 #hovered-visit-text {
-
+  position: absolute; /* Adjust based on context, ensure #slide-show-pane is positioned relative if using absolute */
+  top: 0; /* Set in JS */
+  left: 0; /* Set in JS */
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
   color: #e2e4e9;
-  text-align: bottom;
+  text-align: center; /* Adjusted from 'bottom' to a valid value */
   font-size: 3vh;
-  margin-left: 2vw;
-  margin-top: 2vw;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
 /* might need to change this width an dheight to be 1920x1080 */
@@ -194,7 +196,7 @@ a {
   /* background-color: blue; */
   background-image: url(./resources/testImage.jpg);
   background-size: 100% 100%;
-  position: center;
+  position: absolute;
   justify-content: center;
   border-radius: 15px;
   margin-top: 2vw;
