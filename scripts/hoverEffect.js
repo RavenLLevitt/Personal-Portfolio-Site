@@ -47,54 +47,52 @@ document.addEventListener("mousemove", function (e) {
 //     });
 //   }
 // });
-
-
 // initial transition
 // ignore that i swapped to jqeury here
 // hide cursor after click?
 $(document).ready(function () {
-  
-
   $("#queueButton").click(function (event) {
-
-
-    $("#hiddenGradient") // Make sure to use the correct ID here
-      .css({
-        display: "block",
-        position: "absolute",
-        left: "50%",
-        top: "50%",
-        transform: "translate(-50%, -50%)",
-
-        // Remove transform to start expansion from the mouse click position
-      })
-      .animate(
-        {
-          width: "80vh",
-          height: "80vh",
-        },
-        500,
-        // Adjust time as needed
-        function () {
-
-          $(this).css('filter', 'blur(0px)');
-          $('body').css('background-color', '#000000');
+    $("#hiddenGradient").css({
+      display: "block",
+      position: "absolute",
+      left: "50%",
+      top: "50%",
+      transform: "translate(-50%, -50%)",
+    }).animate({
+      width: "80vh",
+      height: "80vh",
+    }, 500, function () {
+      $(this).css('filter', 'blur(0px)');
+      $('body').css('background-color', '#000000');
 
       setTimeout(() => {
-          $('#slide-show-pane').css('opacity', 1);
+        $('#hiddenGradient').append(`
+          <svg id="clockHand" width="20vh" height="10vh" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fadeWhite" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="20vh" y2="0">
+                <stop offset="0%" stop-color="white" />
+                <stop offset="100%" stop-color="white" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <g>
+              <line x1="0" y1="5vh" x2="20vh" y2="5vh" stroke="url(#fadeWhite)" stroke-width="2"/>
+            </g>
+          </svg>
+        `);
+
+        // Initialize rotation after SVG is added
+        const svgGroup = document.getElementById('clockHand'); // Access the newly added SVG element
+        let angle = 0;
+        setInterval(() => {
+          angle = (angle + 0.5) % 360; // Increase the angle by 5 degrees and loop at 360
+          svgGroup.style.transform = `rotate(${angle}deg)`; // Apply rotation to the SVG element
+        }, 10); // Update every 100 milliseconds
       }, 700);
-      
-      
-      
-          //HOW TO MAKE IT JUMP RIGHT AWAY???
-        }
-      );
+    });
     $("#mainButtonText").remove();
     $("#hoverBox").remove();
     $("#queueButton").remove();
-
     flip = true;
-
     $(this).off('click');
   });
 });
