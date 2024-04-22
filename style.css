@@ -2,7 +2,7 @@
 
 /* General CSS */
 body {
-  background-color: #000000;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,7 +206,34 @@ a {
 }
 
 
+/* Page Selector css */
+.wheel {
+  overflow: hidden;
+  width: 200px;
+  height: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  transition: top 0s ease;
+}
 
+.option {
+  height: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #ff0000;
+  transition: transform 0.3s;
+}
+
+.selected {
+  font-weight: bold;
+  transform: scale(1.2); /* Scale up selected option */
+  color: red;
+}
 
 /* Thivngs below probably need to be removed */
 
