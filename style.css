@@ -8,6 +8,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
+  transition: background-color 0.7s ease;
 }
 
 a {
@@ -89,10 +90,10 @@ a {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 0;
-  height: 0;
+  width: 40vh;
+  height: 40vh;
   display: block;
-  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s;
+  transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s, filter 0.5s ease;
   border-radius: 50%;
   z-index: 10;
   background: linear-gradient(137deg, #8d02c0 26.28%, #005af5 83.61%);
@@ -173,21 +174,6 @@ a {
 }
 
 
-#hovered-visit-text {
-  position: absolute; /* Adjust based on context, ensure #slide-show-pane is positioned relative if using absolute */
-  top: 0; /* Set in JS */
-  left: 0; /* Set in JS */
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  color: #e2e4e9;
-  text-align: center; /* Adjusted from 'bottom' to a valid value */
-  font-size: 3vh;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
 /* might need to change this width an dheight to be 1920x1080 */
 /* going to need to probably mess with this a bit once it is completed, and be sure i capture correct res images, maybe multiple of each */
 #selected-project-image {
@@ -206,66 +192,7 @@ a {
 }
 
 
-/* Page Selector css */
-.wheel {
-  overflow: hidden;
-  width: 200px;
-  height: 100px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  user-select: none;
-  transition: top 0s ease;
-}
-
-.option {
-  height: 33.33%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: #ff0000;
-  transition: transform 0.3s;
-}
-
-.selected {
-  font-weight: bold;
-  transform: scale(1.2); /* Scale up selected option */
-  color: red;
-}
-
 /* Thivngs below probably need to be removed */
-
-.header-section {
-  display: flex;
-}
-
-.header-left {
-  justify-content: flex-start;
-  align-content: flex-end;
-}
-
-.header-right {
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 1rem;
-}
-
-.headerText {
-  font-family: "Inter", sans-serif;
-  font-size: 2vw;
-  font-weight: 100;
-  line-height: normal;
-  color: #e2e4e9;
-}
-
-#loginButton {
-  position: relative;
-  font-family: "Inter", sans-serif;
-  font-size: 2vw;
-  font-weight: 100;
-}
 
 .text {
   position: absolute;
@@ -287,64 +214,6 @@ a {
   z-index: 2;
 }
 
-#loginButton:hover .gradient {
-  opacity: 1;
-}
-
-#loginButton {
-  border-radius: 20px;
-  width: 12vw;
-  height: 6vh;
-  border: 2px solid #e2e4e9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.5s ease, border-radius 1s ease;
-  color: transparent;
-  margin-right: 20px;
-}
-
-#loginButton:hover {
-  border-radius: 10px;
-  background-color: #e2e4e9;
-}
-
-#signUpButton {
-  border-radius: 20px;
-  width: 12vw;
-  height: 6vh;
-  border: 2px solid #e2e4e9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.5s ease, border-radius 1s ease,
-    border 0.5s ease;
-  color: transparent;
-  margin-right: 20px;
-}
-
-#signUpButton:hover {
-  border-radius: 10px;
-
-  background: linear-gradient(98deg, #8d02c0 -2.7%, #005af5 106.76%);
-
-  border: 2px solid #000000;
-}
-
-#signUpText {
-  font-family: "Inter", sans-serif;
-  font-size: 2vw;
-  font-weight: 100;
-  line-height: normal;
-  background-clip: text;
-  color: #e2e4e9;
-  transition: color 0.5s ease;
-}
-
-#signUpButton:hover #signUpText {
-  color: #000000;
-}
-
 /* Join Box */
 /* i don't like hard coding the translation but vh isn't working and they aren't stacking properly rn so it will have to do for now */
 /* also resize so it'sthe same size as the buble abbove that would be cool or bigger atleast */
@@ -356,50 +225,6 @@ a {
   align-items: center;
 }
 
-/* THESE NEED TO BE SAME SIZE IDK WHY THEY ARE */
-/* fonts should also be the same and one shouldn't be greyed out like it is */
-/* #pinInput {
-  width: 20vw;
-  height: 3vh;
-  padding: 20px 10px 10px 20px;
-
-  font-size: 20px;
-  border: 2px solid #e2e4e9;
-  border-radius: 10px;
-  background-color: #000000;
-  color: #e2e4e9;
-  font-family: "Inter", sans-serif;
-  text-align: center;
-  align-content: center;
-  resize: none;
-  margin-right: 20px;
-  font-weight: 100;
-} */
-
-/* #submitBtn {
-  padding: 10px 20px;
-  width: 5vw;
-  height: 6vh;
-  background-color: transparent;
-  color: #e2e4e9;
-  border: 2px solid #e2e4e9;
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: "Inter", sans-serif;
-  font-weight: 100;
-  text-align: center;
-  justify-content: center;
-  transition: background-color 0.5s ease, border-radius 1s ease,
-    border 0.5s ease;
-} */
-
-/* #submitBtn:hover {
-  border-radius: 10px;
-
-  background: linear-gradient(98deg, #8d02c0 -2.7%, #005af5 106.76%);
-  color: #000000;
-  border: 2px solid #000000;
-} */
 
 .col {
   position: absolute;
