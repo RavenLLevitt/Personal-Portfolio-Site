@@ -10,7 +10,7 @@ function getRandomRadius() {
 
 function updateButton() {
   
- if(selecting){return;}
+ if(selecting || flip){return;}
  
   borderRadius = borderRadius.map(getRandomRadius);
   queueButton.style.borderRadius = `${borderRadius[0]}% ${borderRadius[1]}% ${borderRadius[2]}% ${borderRadius[3]}%`;
@@ -36,19 +36,19 @@ function hoverCheck() {
         "border-radius 0.5s ease, transform 1s ease, border 0.5s ease, width 0.5s ease, height 0.5s ease";
 
       borderRadius = [50, 50, 50, 50];
-      if (mouseXPercentage < 40 && mouseYPercentage < 40) {
-        // top left
-        borderRadius[0] = 10;
-      } else if (mouseXPercentage > 60 && mouseYPercentage < 40) {
-        // top right
-        borderRadius[1] = 10;
-      } else if (mouseXPercentage < 60 && mouseYPercentage > 60) {
-        // bottom left
-        borderRadius[3] = 10;
-      } else if (mouseXPercentage > 60 && mouseYPercentage > 60) {
-        // bottom right
-        borderRadius[2] = 10;
-      }
+      // if (mouseXPercentage < 40 && mouseYPercentage < 40) {
+      //   // top left
+      //   borderRadius[0] = 10;
+      // } else if (mouseXPercentage > 60 && mouseYPercentage < 40) {
+      //   // top right
+      //   borderRadius[1] = 10;
+      // } else if (mouseXPercentage < 60 && mouseYPercentage > 60) {
+      //   // bottom left
+      //   borderRadius[3] = 10;
+      // } else if (mouseXPercentage > 60 && mouseYPercentage > 60) {
+      //   // bottom right
+      //   borderRadius[2] = 10;
+      // }
     }
   } else if (!flip) {
     document.getElementById("hoverBox").style.height = "30vh";

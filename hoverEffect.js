@@ -202,8 +202,8 @@ $('#selected-project-image').css({
           //   $("#queueButton").replaceWith('<div id="cursorFollower"></div>');
           // Style #cursorFollower as needed, or it should be styled via CSS
           $("#queueButton").css({
-            width: "20vh",
-            height: "20vh",
+            width: "15vh",
+            height: "15vh",
             border: "2px solid #e2e4e9",
             // solid or not?
             // background: "#e2e4e9",
