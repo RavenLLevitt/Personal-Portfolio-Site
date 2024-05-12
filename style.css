@@ -8,7 +8,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  transition: background-color 0.7s ease;
+  transition: background-color 0.5s ease;
 }
 
 a {
@@ -20,7 +20,7 @@ a {
 /* Queue Button CSS */
 #queueButton {
   position: relative;
-  border: 2px solid #e2e4e9;
+  border: 2px solid #000000;
   border-radius: 50vh 50vh 50vh 50vh;
   width: 60vh;
   height: 60vh;
@@ -59,7 +59,7 @@ a {
 
   /* typography Settings */
 
-  color: #e2e4e9;
+  color: #000000;
   text-align: center;
   font-family: "Inter", sans-serif;
   font-size: 6vw;
@@ -69,8 +69,7 @@ a {
 }
 
 #queueButton:hover #mainButtonText {
-  color: #000000;
-  font-weight: 200;
+  color: #e2e4e9;
 }
 /* hover effect */
 #hoverBox {
@@ -191,7 +190,12 @@ a {
   /* replace with image src */
 }
 
-
+#clockHand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 /* Thivngs below probably need to be removed */
 
 .text {

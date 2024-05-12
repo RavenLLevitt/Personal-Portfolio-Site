@@ -14,6 +14,15 @@ document.addEventListener("mousemove", function (e) {
     hoverBox.style.top = mouseY + "px";
   }
 });
+// Change the background color to black when the mouse enters the button
+document.getElementById("queueButton").addEventListener("mouseenter", function() {
+  document.body.style.backgroundColor = "#000000";
+});
+
+// Change the background color back to white when the mouse leaves the button
+document.getElementById("queueButton").addEventListener("mouseleave", function() {
+  document.body.style.backgroundColor = "#FFFFFF";
+});
 
 // $(document).mousemove(function (e) {
 //   if (flip) {
@@ -66,19 +75,19 @@ $(document).ready(function () {
       $('body').css('background-color', '#000000');
 
       setTimeout(() => {
-        $('#hiddenGradient').append(`
-          <svg id="clockHand" width="20vh" height="10vh" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="fadeWhite" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="20vh" y2="0">
-                <stop offset="0%" stop-color="white" />
-                <stop offset="100%" stop-color="white" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-            <g>
-              <line x1="0" y1="5vh" x2="20vh" y2="5vh" stroke="url(#fadeWhite)" stroke-width="2"/>
-            </g>
-          </svg>
-        `);
+        // $('#hiddenGradient').append(`
+        //   <svg id="clockHand" width="20vh" height="10vh" xmlns="http://www.w3.org/2000/svg">
+        //     <defs>
+        //       <linearGradient id="fadeWhite" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="20vh" y2="0">
+        //         <stop offset="0%" stop-color="white" />
+        //         <stop offset="100%" stop-color="white" stop-opacity="0" />
+        //       </linearGradient>
+        //     </defs>
+        //     <g>
+        //       <line x1="0" y1="5vh" x2="20vh" y2="5vh" stroke="url(#fadeWhite)" stroke-width="2"/>
+        //     </g>
+        //   </svg>
+        // `);
 
         // Initialize rotation after SVG is added
         const svgGroup = document.getElementById('clockHand'); // Access the newly added SVG element
